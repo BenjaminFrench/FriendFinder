@@ -17,4 +17,4 @@ var friendsData = [
     }
 ];
 
-module.exports(friendsData);
+module.exports = friendsData;
