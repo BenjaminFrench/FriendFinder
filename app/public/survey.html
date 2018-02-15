@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
@@ -170,14 +171,15 @@
     <!-- Submit Button -->
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
         <i class="fa fa-check-circle" aria-hidden="true"></i>
-        Submit</button>
+        Submit
+    </button>
 
     <hr>
     <footer class="footer">
         <div class="container">
             <p>
                 <a href="/api/friends">API Friends List</a> |
-                <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a>
+                <a href="https://github.com/BenajmaminFrench/FriendFinder">GitHub Repo</a>
             </p>
         </div>
     </footer>
@@ -191,14 +193,14 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h2 class="modal-title">
                     <strong>Best Match</strong>
                 </h2>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <h2 id="match-name"></h2>
-                <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+                <img class="img-fluid" id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -226,9 +228,9 @@
         }
     };
 
-    for (var selector in config) {
-        $(selector).chosen(config[selector]);
-    }
+    // for (var selector in config) {
+    //     $(selector).chosen(config[selector]);
+    // }
 
     // Capture the form inputs
     $("#submit").on("click", function (event) {
@@ -283,6 +285,7 @@
                 $("#results-modal").modal("toggle");
 
             });
+           
         } else {
             alert("Please fill out all fields before submitting!");
         }
