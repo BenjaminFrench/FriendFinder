@@ -16,6 +16,7 @@ module.exports = function (app) {
         // Seed difference so first comparison will always be matched first
         var bestDifference = 100;
 
+        // Iterate through all the existing friends and choose a best match
         friendsData.forEach((element, index) => {
             // parse current friend for compare score array into Ints
             matchQ = element.scores.map(x => parseInt(x));
@@ -30,7 +31,10 @@ module.exports = function (app) {
             }
         });
 
+        // Add the new friend to the data object in app/data/friends.js
         friendsData.push(newfriend);
+
+        // respond with JSON of matching friend for the new person
         res.json(match);
     });
 };
